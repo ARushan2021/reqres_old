@@ -15,4 +15,4 @@ from configuration import *
 @allure.title('Изменяем все параметры пользователя')
 def test_update_user(resource, id_user, body):
     endpoint_put = f'{BASE_URL}{resource}{id_user}'
-    APIRequests.put_request(endpoint_put, body, '200')
+    APIRequests.put_test(endpoint_put, body, '200')

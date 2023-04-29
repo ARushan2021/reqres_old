@@ -15,7 +15,7 @@ from configuration import *
 @allure.title('Регистрируем нового пользователя')
 def test_create_new_user(resource, body):
     endpoint_post = f'{BASE_URL}{resource}'
-    APIRequests.post_request(endpoint_post, body, '201')
+    APIRequests.post_test(endpoint_post, body, '201')
 
 
 

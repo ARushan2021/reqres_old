@@ -15,7 +15,7 @@ from configuration import *
 @allure.title('Получаем информацию об одном пользователе')
 def test_get_user(resource, id_user):
     endpoint_get = f'{BASE_URL}{resource}{id_user}'
-    APIRequests.get_request(endpoint_get, '200')
+    APIRequests.get_test(endpoint_get, '200')
 
 # allure serve test_reports - формирование allure в html
 # pip3 freeze > requarements.txt - обновлене файлика через терминал
