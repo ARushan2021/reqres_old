@@ -30,5 +30,4 @@ class APIRequests:
     @staticmethod
     def delete_test(url, status_code):
         delete_result = Http_methods.delete(url)
-        print(status_code)
         Checking.check_all_status_code(delete_result, status_code)
