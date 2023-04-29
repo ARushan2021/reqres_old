@@ -8,14 +8,16 @@ from configuration import *
 
 
 @allure.epic('Позитивное тестирование портала "https://reqres.in/"')
-@pytest.mark.parametrize('resource, id_user',
-                         [(f'{RESOURCE_USERS}', '2'),
-                          (f'{RESOURCE_USERS}', '3')]
+@pytest.mark.parametrize('resource, body',
+                         [(f'{RESOURCE_USERS}', f'{REQUEST_BODY_POST}'),
+                          (f'{RESOURCE_USERS}', f'{REQUEST_BODY_POST2}')]
                          )
-@allure.title('Получаем информацию об одном пользователе')
-def test_get_user(resource, id_user):
-    endpoint_get = f'{BASE_URL}{resource}{id_user}'
-    APIRequests.get_single_user(endpoint_get)
+@allure.title('Регистрируем нового пользователя')
+def test_create_new_user(resource, body):
+    endpoint_post = f'{BASE_URL}{resource}'
+    APIRequests.post_request(endpoint_post, body, '201')
+
+
 
 # allure serve test_reports - формирование allure в html
 # pip3 freeze > requarements.txt - обновлене файлика через терминал

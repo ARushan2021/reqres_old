@@ -3,24 +3,32 @@ import allure
 from utils.http_methods import Http_methods
 from utils.checking import Checking
 
-"""Методы для тестирования 'The Star Wars API'"""
+"""Методы для тестирования 'https://reqres.in/'"""
 
 
 class APIRequests:
     @staticmethod
-    def get_single_user(url):
+    def get_request(url, status_code):
         get_result = Http_methods.get(url)
-        Checking.check_all_status_code(get_result, '200')
+        Checking.check_all_status_code(get_result, status_code)
 
     @staticmethod
-    def create_new_user(url, first_name):
-        json = '{"first_name": "' + first_name + '"}'
-        post_result = Http_methods.post(url, json)
-        Checking.check_all_status_code(post_result, '201')
+    def post_request(url, body, status_code):
+        post_result = Http_methods.post(url, body)
+        Checking.check_all_status_code(post_result, status_code)
 
     @staticmethod
-    def update_user(url, first_name):
-        json = '{"first_name": "' + first_name + '"}'
+    def put_request(url, json, status_code):
         put_result = Http_methods.put(url, json)
-        Checking.check_all_status_code(put_result, '200')
+        Checking.check_all_status_code(put_result, status_code)
 
+    @staticmethod
+    def patch_request(url, json, status_code):
+        patch_result = Http_methods.patch(url, json)
+        Checking.check_all_status_code(patch_result, status_code)
+
+    @staticmethod
+    def delete_request(url, status_code):
+        delete_result = Http_methods.delete(url)
+        print(status_code)
+        Checking.check_all_status_code(delete_result, status_code)

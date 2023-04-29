@@ -2,7 +2,7 @@ import requests
 
 from utils.logger import Logger
 
-"""Список Http методов для тестирования 'The Star Wars API'"""
+"""Список Http методов для тестирования 'https://reqres.in/'"""
 
 
 class Http_methods:
@@ -27,5 +27,19 @@ class Http_methods:
     def put(url, json):
         Logger.add_request(url, method="PUT")
         result = requests.put(url, json, headers=Http_methods.headers, cookies=Http_methods.cookies)
+        Logger.add_response(result)
+        return result
+
+    @staticmethod
+    def patch(url, json):
+        Logger.add_request(url, method="PATCH")
+        result = requests.patch(url, json, headers=Http_methods.headers, cookies=Http_methods.cookies)
+        Logger.add_response(result)
+        return result
+
+    @staticmethod
+    def delete(url):
+        Logger.add_request(url, method="PATCH")
+        result = requests.delete(url, headers=Http_methods.headers, cookies=Http_methods.cookies)
         Logger.add_response(result)
         return result

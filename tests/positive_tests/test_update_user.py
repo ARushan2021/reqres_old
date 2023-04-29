@@ -8,11 +8,11 @@ from configuration import *
 
 
 @allure.epic('Позитивное тестирование портала "https://reqres.in/"')
-@pytest.mark.parametrize('resource, id_user, first_name',
-                         [(f'{RESOURCE_USERS}', '6', 'morp'),
-                          (f'{RESOURCE_USERS}', '7', 'Automatic QA engineer')]
+@pytest.mark.parametrize('resource, id_user, body',
+                         [(f'{RESOURCE_USERS}', '6', f'{REQUEST_BODY_UPDATE}'),
+                          (f'{RESOURCE_USERS}', '7', f'{REQUEST_BODY_UPDATE2}')]
                          )
 @allure.title('Изменяем все параметры пользователя')
-def test_put_user(resource, id_user, first_name):
-    endpoint_get = f'{BASE_URL}{resource}{id_user}'
-    APIRequests.update_user(endpoint_get, first_name)
+def test_update_user(resource, id_user, body):
+    endpoint_put = f'{BASE_URL}{resource}{id_user}'
+    APIRequests.put_request(endpoint_put, body, '200')
