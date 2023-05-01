@@ -12,3 +12,10 @@
 Достаточно реализовать работу где-то с 5-тю api
 Получается для API: 5-ть положительных кейсов, 5-ть негативных кейсов
 Для WEB: 2 страницы по 5-ть тестов, где для кейсов свагера использовать сравнение с API
+
+
+# allure serve test_reports - формирование allure в html
+# pip3 freeze > requarements.txt - обновлене файлика через терминал
+# pytest tests/negative_tests/test_delete_user_unsuccessful.py
+# pytest tests/positive_tests/test_delete_user.py
+# pytest tests/

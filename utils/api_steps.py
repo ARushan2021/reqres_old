@@ -28,6 +28,6 @@ class APIRequests:
         Checking.check_all_status_code(patch_result, status_code)
 
     @staticmethod
-    def delete_test(url, status_code):
-        delete_result = Http_methods.delete(url)
+    def delete_test(url, json, status_code):
+        delete_result = Http_methods.delete(url, json)
         Checking.check_all_status_code(delete_result, status_code)
