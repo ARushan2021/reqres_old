@@ -1,4 +1,5 @@
-from pydantic import BaseModel, validator, Field
+from pydantic import BaseModel, validator
+
 from schemas.validation_of_fields import ValidationOfFields
 
 """Валидация json-схем в response, какие должны быть поля и какие типы"""

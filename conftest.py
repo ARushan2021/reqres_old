@@ -2,6 +2,8 @@ import os
 
 import pytest
 
+"""Функция по очисте каталогов logs и reports"""
+
 
 @pytest.fixture(scope='session')
 def clear_test_reports_and_logs():
@@ -12,6 +14,3 @@ def clear_test_reports_and_logs():
     folder_logs = 'logs/'
     for c in os.listdir(folder_logs):
         os.remove(os.path.join(folder_logs, c))
-
-
-

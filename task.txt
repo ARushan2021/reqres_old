@@ -14,7 +14,7 @@
 
 
 # allure serve test_reports - формирование allure в html
-# pip3 freeze > requarements.txt - обновление файлика через терминал
-# pytest tests/negative_tests/test_login_unseccessful.py -v -s
-# pytest tests/positive_tests/test_create_new_user.py -v -s
-# pytest tests/
+# pytest tests/negative_tests/ -v -s --alluredir=./test_reports/
+# pytest tests/positive_tests/ -v -s --alluredir=./test_reports/
+# pytest tests/ --alluredir=./test_reports/
+ pip3 freeze > requarements.txt - обновление файлика через терминал
