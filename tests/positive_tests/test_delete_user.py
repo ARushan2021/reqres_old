@@ -8,6 +8,7 @@ from schemas.empty_request_body import EmptyRequestBody
 """Тестирование портала 'https://reqres.in/'"""
 
 
+@pytest.mark.usefixtures('clear_test_reports_and_logs')
 @allure.epic('Позитивное тестирование портала "https://reqres.in/"')
 @pytest.mark.parametrize('resource, id_user',
                          [(f'{RESOURCE_USERS}', '20'),

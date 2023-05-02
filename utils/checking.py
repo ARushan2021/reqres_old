@@ -5,7 +5,7 @@ class Checking:
 
     """Метод для проверки статус кода"""
     @staticmethod
-    def check_all_status_code(response_result, expected_status_code):
+    def check_status_code(response_result, expected_status_code):
         Checking.expected_status_code = expected_status_code
         assert response_result.status_code == int(Checking.expected_status_code), \
             f'Получен не верный статус код {response_result.status_code}'
@@ -30,5 +30,5 @@ class Checking:
     @staticmethod
     def validate_time_response(response_result):
         time_response = response_result.elapsed.total_seconds()
-        assert time_response < 2, f'Ошибка! Время ответа на запрос превысило 2 сек и составило: {time_response}'
+        assert time_response < 2, f'Ошибка! Время ответа на запрос превысило 2 сек. и составило: {time_response}'
         print(f'*** Время ответа на запрос составило: {time_response}')

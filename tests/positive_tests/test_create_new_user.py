@@ -8,6 +8,7 @@ from schemas.post import Post
 """Тестирование портала 'https://reqres.in/'"""
 
 
+@pytest.mark.usefixtures('clear_test_reports_and_logs')
 @allure.epic('Позитивное тестирование портала "https://reqres.in/"')
 @pytest.mark.parametrize('resource, body',
                          [(f'{RESOURCE_USERS}', f'{REQUEST_BODY_POST}'),

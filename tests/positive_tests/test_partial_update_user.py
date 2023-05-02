@@ -8,6 +8,7 @@ from schemas.put_patch import PutPatch
 """Тестирование портала 'https://reqres.in/'"""
 
 
+@pytest.mark.usefixtures('clear_test_reports_and_logs')
 @allure.epic('Позитивное тестирование портала "https://reqres.in/"')
 @pytest.mark.parametrize('resource, id_user, body',
                          [(f'{RESOURCE_USERS}', '8', f'{REQUEST_BODY_UPDATE}'),

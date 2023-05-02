@@ -8,11 +8,13 @@ import os
 class Logger:
     file_name = f'logs/log_{str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))}.log'
 
+    """Создание и запись информации в файл лога"""
     @classmethod
     def write_log_to_file(cls, data: str, ):
         with open(cls.file_name, "a", encoding="utf-8") as logger_file:
             logger_file.write(data)
 
+    """Сбор информации по request"""
     @classmethod
     def add_request(cls, url: str, method: str):
         test_name = os.environ.get("PYTEST_CURRENT_TEST")
@@ -27,6 +29,7 @@ class Logger:
 
         cls.write_log_to_file(data_to_add)
 
+    """Сбор информации по response"""
     @classmethod
     def add_response(cls, result):
         cookies_as_dict = dict(result.cookies)
