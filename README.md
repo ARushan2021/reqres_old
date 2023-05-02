@@ -11,8 +11,9 @@
 - Формируется allure отчет.
 
 
-
+*****
 - allure serve test_reports - формирование allure в html
 - pytest tests/negative_tests/ -v -s --alluredir=./test_reports/
 - pytest tests/positive_tests/ -v -s --alluredir=./test_reports/
 - pytest tests/ --alluredir=./test_reports/
+*****
