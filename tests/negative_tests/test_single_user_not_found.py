@@ -1,8 +1,9 @@
 import allure
 import pytest
 
-from utils.api_steps import APIRequests
-from configuration import *
+from utils.api_tests import APIRequests
+from configuration import BASE_URL, RESOURCE_REGISTER
+from schemas.empty_request_body import EmptyRequestBody
 
 """Тестирование портала 'https://reqres.in/'"""
 
@@ -12,12 +13,8 @@ from configuration import *
                          [(f'{RESOURCE_REGISTER}', '150'),
                           (f'{RESOURCE_REGISTER}', '155')]
                          )
-@allure.title('Не найден пользователь')
+@allure.title('Неуспешный запрос информации о пользователе, неверный id')
 def test_user_not_found(resource, id_user):
     endpoint_post = f'{BASE_URL}{resource}{id_user}'
-    APIRequests.get_test(endpoint_post, '404')
+    APIRequests.get_test(endpoint_post, '404', EmptyRequestBody.CURLY_BRACKETS)
 
-
-
-# allure serve test_reports - формирование allure в html
-# pip3 freeze > requarements.txt - обновлене файлика через терминал

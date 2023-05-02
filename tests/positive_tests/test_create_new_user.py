@@ -1,8 +1,9 @@
 import allure
 import pytest
 
-from utils.api_steps import APIRequests
-from configuration import *
+from utils.api_tests import APIRequests
+from configuration import BASE_URL, RESOURCE_USERS, REQUEST_BODY_POST, REQUEST_BODY_POST2
+from schemas.post import Post
 
 """Тестирование портала 'https://reqres.in/'"""
 
@@ -12,12 +13,8 @@ from configuration import *
                          [(f'{RESOURCE_USERS}', f'{REQUEST_BODY_POST}'),
                           (f'{RESOURCE_USERS}', f'{REQUEST_BODY_POST2}')]
                          )
-@allure.title('Регистрируем нового пользователя')
+@allure.title('Регистрация нового пользователя')
 def test_create_new_user(resource, body):
     endpoint_post = f'{BASE_URL}{resource}'
-    APIRequests.post_test(endpoint_post, body, '201')
+    APIRequests.post_test(endpoint_post, body, '201', Post)
 
-
-
-# allure serve test_reports - формирование allure в html
-# pip3 freeze > requarements.txt - обновлене файлика через терминал

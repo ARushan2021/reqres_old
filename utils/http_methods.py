@@ -38,8 +38,8 @@ class Http_methods:
         return result
 
     @staticmethod
-    def delete(url, json):
+    def delete(url):
         Logger.add_request(url, method="DELETE")
-        result = requests.delete(url, data=json, headers=Http_methods.headers, cookies=Http_methods.cookies)
+        result = requests.delete(url, headers=Http_methods.headers, cookies=Http_methods.cookies)
         Logger.add_response(result)
         return result

@@ -16,6 +16,6 @@
 
 # allure serve test_reports - формирование allure в html
 # pip3 freeze > requarements.txt - обновлене файлика через терминал
-# pytest tests/negative_tests/test_delete_user_unsuccessful.py
-# pytest tests/positive_tests/test_delete_user.py
+# pytest tests/negative_tests/test_single_resource_not_found.py -v -s
+# pytest tests/positive_tests/test_create_new_user.py -v -s
 # pytest tests/

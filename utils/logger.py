@@ -2,6 +2,9 @@ import datetime
 import os
 
 
+"""Запись логов к запросам"""
+
+
 class Logger:
     file_name = f'logs/log_{str(datetime.datetime.now().strftime("%Y-%m-%d_%H-%M-%S"))}.log'
 

@@ -1,8 +1,9 @@
 import allure
 import pytest
 
-from utils.api_steps import APIRequests
-from configuration import *
+from utils.api_tests import APIRequests
+from configuration import BASE_URL, RESOURCE_USERS
+from schemas.get import Get
 
 """Тестирование портала 'https://reqres.in/'"""
 
@@ -12,10 +13,9 @@ from configuration import *
                          [(f'{RESOURCE_USERS}', '2'),
                           (f'{RESOURCE_USERS}', '3')]
                          )
-@allure.title('Получаем информацию об одном пользователе')
-def test_get_user(resource, id_user):
+@allure.title('Получение информации о пользователе')
+def test_single_user(resource, id_user):
     endpoint_get = f'{BASE_URL}{resource}{id_user}'
-    APIRequests.get_test(endpoint_get, '200')
+    APIRequests.get_test(endpoint_get, '200', Get)
 
-# allure serve test_reports - формирование allure в html
-# pip3 freeze > requarements.txt - обновлене файлика через терминал
+
