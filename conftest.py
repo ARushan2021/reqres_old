@@ -2,7 +2,7 @@ import os
 
 import pytest
 
-"""Функция по очисте каталогов logs и reports"""
+"""Функция по очистке каталогов logs и reports"""
 
 
 @pytest.fixture(scope='session')

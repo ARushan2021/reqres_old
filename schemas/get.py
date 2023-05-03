@@ -18,7 +18,7 @@ class Data(BaseModel):
 
     @validator('avatar')
     def check_that_https_in_avatar(cls, web_link):
-        ValidationOfFields.check_that_https_in_avatar(web_link)
+        ValidationOfFields.check_that_https_in_link(web_link)
 
 
 class Support(BaseModel):
@@ -27,7 +27,7 @@ class Support(BaseModel):
 
     @validator('url')
     def check_that_https_in_avatar(cls, web_link):
-        ValidationOfFields.check_that_https_in_avatar(web_link)
+        ValidationOfFields.check_that_https_in_link(web_link)
 
 
 class Get(BaseModel):

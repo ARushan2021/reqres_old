@@ -4,7 +4,7 @@ class ValidationOfFields:
 
     """Проверяем, что в заданном поле присутствует 'https://'"""
     @staticmethod
-    def check_that_https_in_avatar(web_link):
+    def check_that_https_in_link(web_link):
         if 'https://' in web_link:
             return web_link
         else:
