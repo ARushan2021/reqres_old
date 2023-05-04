@@ -1,9 +1,9 @@
+"""Модуль для валидации json-схем в response put и patch запросах, какие должны быть поля и какие типы"""
+
 from datetime import datetime
 
 from pydantic import BaseModel
 from pydantic.class_validators import Optional
-
-"""Валидация json-схем в response, какие должны быть поля и какие типы"""
 
 
 class PutPatch(BaseModel):

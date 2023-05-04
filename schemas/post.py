@@ -1,9 +1,9 @@
+"""Модуль для валидации json-схем в response post-запроса, какие должны быть поля и какие типы"""
+
 from datetime import datetime
 
 from pydantic import BaseModel, validator
 from schemas.validation_of_fields import ValidationOfFields
-
-"""Валидация json-схемы в response, какие должны быть поля и какие типы"""
 
 
 class Post(BaseModel):
